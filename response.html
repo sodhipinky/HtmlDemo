@@ -8,8 +8,17 @@
     <script>
         var url = new URL(window.location.href);
         var fav = url.searchParams.get("fav");
+        if (fav == null) {
+            fav = "Spoilsport! You did not choose any Avenger";
+        }
         var theater = url.searchParams.getAll("theater");
+        if (theater.length == 0) {
+            theater = ["Too bad! You don't have any friends to watch with you! Haha!"];
+        }
         var movie = url.searchParams.get("movie");
+        if (movie == null) {
+            movie = "Boring! You don't have any favorite Avenger movie!";
+        }
     </script>
 </head>
 
