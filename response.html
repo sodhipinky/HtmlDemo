@@ -5,11 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avenger Fan Page</title>
+    <script>
+        var url = new URL(window.location.href);
+        var fav = url.searchParams.get("fav");
+        var theater = url.searchParams.getAll("theater");
+        var movie = url.searchParams.get("movie");
+    </script>
 </head>
 
 <body style="font-family:monospace; font-size:large; line-height: 2rem; margin-left:2rem; background-color:lightpink;">
     <h1>Hi You, Marvel Fan!</h1>
     <h2 style="color: azure;">Thank you for your participation!</h2>
+    <p>Your favorite Avenger is:
+        <script>
+            document.write(fav);
+        </script>
+    </p>
+    <p>
+        You prefer to watch your favorite Avenger at:
+        <script>
+            document.write(theater.join(", "));
+        </script>
+    </p>
+    <p>
+        Your favorite Avenger movie is:
+        <script>
+            document.write(movie);
+        </script>
+    </p>
 </body>
 
 </html>
