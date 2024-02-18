@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avenger Fan Page</title>
     <script>
-        var url = new URL(window.location.href);
-        var fav = url.searchParams.get("fav");
+        let url = new URL(window.location.href);
+        let fav = url.searchParams.get("fav");
         if (fav == null) {
             fav = "Spoilsport! You did not choose any Avenger";
         }
-        var theater = url.searchParams.getAll("theater");
+        let theater = url.searchParams.getAll("theater");
         if (theater.length == 0) {
             theater = ["Too bad! You don't have any friends to watch with you! Haha!"];
         }
-        var movie = url.searchParams.get("movie");
+        let movie = url.searchParams.get("movie");
         if (movie == "Select") {
             movie = "Boring! You don't have a favorite Avenger movie!";
         }
