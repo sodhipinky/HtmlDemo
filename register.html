@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="card mt-5 border-3" style="width: 30rem;margin-left: auto; margin-right: auto;">
+    <div class="card mt-5 border-3" style="width: 60rem; margin-left: auto; margin-right: auto;">
         <div class="mb-3">
             <img src="images/login.png" class="card-img-top"
                 style="width: 100px; margin: 20px; border-radius: 50%; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);"
@@ -22,30 +22,49 @@
         </div>
         <form class="card-body">
             <h3 class="card-title">Please enter your details</h3>
-            <div class="mb-3 mt-3 form-floating">
+            <div class="mb-3 mt-3 input-group">
                 <label for="name" class="form-label">Full Name: </label>
-                <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                <input type="text" class="form-control ms-1" id="name" placeholder="John Doe" required>
             </div>
-            <div class="mb-3 form-floating">
-                <label for="useremail" class="form-label">Email: </label>
-                <input type="email" class="form-control" id="useremail" placeholder="john@example.com" required>
+            <div class="mb-3 input-group">
+                <label for="useremail" class="form-label">Email Id: </label>
+                <input type="email" class="form-control ms-3" id="useremail" placeholder="john@example.com" required>
             </div>
-            <div class="mb-3 form-floating">
+            <div class="mb-3 input-group">
                 <label for="username" class="form-label">Username: </label>
-                <input type="text" class="form-control" id="username" placeholder="johndoe" required>
+                <input type="text" class="form-control ms-3" id="username" placeholder="johndoe" required>
             </div>
-            <div class="mb-3 form-floating">
+            <div class="mb-3 input-group">
                 <label for="password" class="form-label">Password: </label>
-                <input type="password" class="form-control" id="password" placeholder="minimum 6 characters" required>
+                <input type="password" class="form-control ms-3" id="password" placeholder="minimum 6 characters" min="6" required>
             </div>
             <div class="m-3 form-check form-check-inline">
-                <input type="checkbox" class="form-check-input me-2" style="width:20px; height:20px;" id="rememberme" checked>
+                <input type="checkbox" class="form-check-input me-2" style="width:20px; height:20px;" id="rememberme"
+                    checked>
                 <label class="form-check-label" for="rememberme">Remember Me</label>
             </div>
             <div class="m-3">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#responseModal">Register</button>
             </div>
         </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="responseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sucess</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Registration Successful</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
