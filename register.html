@@ -37,7 +37,7 @@
             <div class="mb-3 input-group">
                 <label for="password" class="form-label">Password: </label>
                 <input type="password" class="form-control ms-3" id="password" placeholder="minimum 6 characters"
-                    min="6" required>
+                    minlength="6" required>
             </div>
             <div class="m-3 form-check form-check-inline">
                 <input type="checkbox" class="form-check-input me-2" style="width:20px; height:20px;" id="rememberme"
@@ -45,41 +45,18 @@
                 <label class="form-check-label" for="rememberme">Remember Me</label>
             </div>
             <div class="m-3">
-                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#responseModal"
-                    disabled>Register</button>
+                <button type="submit" id="submit" class="btn btn-primary" disabled>Sign Up</button>
             </div>
         </form>
     </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="responseModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sucess</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Registration Successful</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        const form = document.getElementById('registration-form');
-        const submitButton = document.getElementById('submit');
-        form.addEventListener('input', () => {
-            if (form.checkValidity()) {
-                submitButton.disabled = false;
-            } else {
-                submitButton.disabled = true;
-            }
-
-        });
-    </script>
 </body>
+<script>
+    const form = document.getElementById('registration-form');
+    const submitButton = document.getElementById('submit');
+    form.addEventListener('input', () => {
+        const isFormValid = form.checkValidity();
+        submitButton.disabled = !isFormValid;
+    });
+</script>
 
 </html>
