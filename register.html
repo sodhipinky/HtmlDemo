@@ -36,7 +36,8 @@
             </div>
             <div class="mb-3 input-group">
                 <label for="password" class="form-label">Password: </label>
-                <input type="password" class="form-control ms-3" id="password" placeholder="minimum 6 characters" min="6" required>
+                <input type="password" class="form-control ms-3" id="password" placeholder="minimum 6 characters"
+                    min="6" required>
             </div>
             <div class="m-3 form-check form-check-inline">
                 <input type="checkbox" class="form-check-input me-2" style="width:20px; height:20px;" id="rememberme"
@@ -44,7 +45,8 @@
                 <label class="form-check-label" for="rememberme">Remember Me</label>
             </div>
             <div class="m-3">
-                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#responseModal">Register</button>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#responseModal">Register</button>
             </div>
         </form>
     </div>
@@ -66,7 +68,18 @@
             </div>
         </div>
     </div>
-    <script src="js/register.js"></script>
+    <script>
+        const form = document.getElementById('registration-form');
+        const submitButton = document.getElementById('submit');
+        form.addEventListener('input', () => {
+            if (form.checkValidity()) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+
+        });
+    </script>
 </body>
 
 </html>
